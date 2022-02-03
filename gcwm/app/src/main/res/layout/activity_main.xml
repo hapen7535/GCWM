@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#A196CAF0"
+    tools:context=".MainActivity">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gugi"
+                android:gravity="center"
+                android:text="GCWM"
+                android:textColor="#424242"
+                android:layout_marginTop="80dp"
+                android:textSize="60sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#424242"
+                android:text="Get Cooking With Me"
+                android:fontFamily="@font/gugi"
+                android:textSize="20sp"
+                android:layout_marginTop="140dp"
+                android:gravity="center"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#424242"
+                android:layout_marginTop="180dp"
+                android:text="지금 가진 재료를 통해 레시피를 찾아보세요!"
+                android:gravity="center"
+                android:fontFamily="@font/notosanskrbold"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/circle" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/notosanskrbold"
+                android:textSize="20sp"
+                android:textColor="#424242"
+                android:layout_marginTop="350dp"
+                android:text="시작하려면 화면을 클릭하세요!"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/cooking_resize"/>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
