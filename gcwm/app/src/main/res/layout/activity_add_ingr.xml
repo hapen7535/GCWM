@@ -103,25 +103,19 @@
            android:layout_gravity="center"
            android:layout_marginTop="70dp"/>
 
-       <LinearLayout
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_gravity="bottom"
-           android:layout_marginLeft="85dp"
-           android:layout_marginBottom="10dp"
-           android:background="@drawable/searchbutton"
-           android:gravity="center">
 
-           <TextView
-               android:layout_width="match_parent"
+           <Button
+               android:layout_width="wrap_content"
                android:layout_height="wrap_content"
+               android:layout_marginTop="300dp"
+               android:layout_gravity="center"
+               android:background="@drawable/searchbutton"
                android:fontFamily="@font/notosanskrbold"
                android:gravity="center"
                android:text="레시피 찾아보기"
                android:textColor="#5F5F5F"
                android:textSize="13sp" />
 
-       </LinearLayout>
 
 
    </FrameLayout>
