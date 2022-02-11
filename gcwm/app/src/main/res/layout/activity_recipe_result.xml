@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#A196CAF0"
+    tools:context=".RecipeResult">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="26dp"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/returnbtn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="GCWM"
+            android:textColor="#424242"
+            android:fontFamily="@font/gugi"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="30sp"/>
+
+    </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/addingrblank"
+            android:orientation="vertical">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/coleslaw_resize" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskrbold"
+                android:gravity="center"
+                android:text="코울슬로"
+                android:textColor="#5F5F5F"
+                android:textSize="19dp" />
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="492dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="51dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskrbold"
+                            android:gravity="center"
+                            android:text="재료"
+                            android:textColor="#5F5F5F"
+                            android:textSize="19dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/ingr1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="양배추"
+                                android:textColor="#5F5F5F"
+                                android:textSize="19sp" />
+
+                            <TextView
+                                android:id="@+id/ingr2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="당근"
+                                android:textColor="#5F5F5F"
+                                android:textSize="19sp" />
+
+                            <TextView
+                                android:id="@+id/ingr3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="양파"
+                                android:textColor="#5F5F5F"
+                                android:textSize="19sp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/amount1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="1/4통"
+                                android:textColor="#CC5F5F5F"
+                                android:textSize="19sp" />
+
+                            <TextView
+                                android:id="@+id/amount2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="1/2개"
+                                android:textColor="#CC5F5F5F"
+                                android:textSize="19sp" />
+
+                            <TextView
+                                android:id="@+id/amount3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="1/2개"
+                                android:textColor="#CC5F5F5F"
+                                android:textSize="19sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="245dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:background="#4D707070" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="51dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskrbold"
+                            android:gravity="center"
+                            android:text="양념"
+                            android:textColor="#5F5F5F"
+                            android:textSize="19dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/sauce1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="마요네즈"
+                                android:textColor="#5F5F5F"
+                                android:textSize="19sp" />
+
+                            <TextView
+                                android:id="@+id/sauce2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="설탕"
+                                android:textColor="#5F5F5F"
+                                android:textSize="19sp" />
+
+                            <TextView
+                                android:id="@+id/sauce3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="식초"
+                                android:textColor="#5F5F5F"
+                                android:textSize="19sp" />
+
+                            <TextView
+                                android:id="@+id/sauce4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="후추"
+                                android:textColor="#5F5F5F"
+                                android:textSize="19sp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/sauce_amont1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="3큰술"
+                                android:textColor="#CC5F5F5F"
+                                android:textSize="19sp" />
+
+                            <TextView
+                                android:id="@+id/sauce_amont2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="3큰술"
+                                android:textColor="#CC5F5F5F"
+                                android:textSize="19sp" />
+
+                            <TextView
+                                android:id="@+id/sauce_amount3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text="2큰술"
+                                android:textColor="#CC5F5F5F"
+                                android:textSize="19sp" />
+
+                            <TextView
+                                android:id="@+id/sauce_amount4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/notosanskrmedium"
+                                android:text=" "
+                                android:textColor="#CC5F5F5F"
+                                android:textSize="19sp" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="245dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:background="#4D707070" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="51dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskrbold"
+                            android:gravity="center"
+                            android:text="양"
+                            android:textColor="#5F5F5F"
+                            android:textSize="19dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:orientation="vertical">
+
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/menu_amount1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/notosanskrmedium"
+                            android:text="4인분"
+                            android:textColor="#CC5F5F5F"
+                            android:textSize="19sp" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="356dp"
+                        android:layout_height="8dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:background="#33707070" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="80dp"
+                            android:fontFamily="@font/notosanskrmedium"
+                            android:text="1"
+                            android:textColor="#CC5F5F5F"
+                            android:textSize="19sp" />
+
+                        <TextView
+                            android:id="@+id/recipeExplain1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/notosanskrmedium"
+                            android:text="양배추를 최대한 가늘게 채썰어주세요."
+                            android:textColor="#CC5F5F5F"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/ExplainImg1"
+                            android:layout_width="119dp"
+                            android:layout_height="117dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/coleslaw1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="80dp"
+                            android:fontFamily="@font/notosanskrmedium"
+                            android:text="2"
+                            android:textColor="#CC5F5F5F"
+                            android:textSize="19sp" />
+
+                        <TextView
+                            android:id="@+id/recipeExplain2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/notosanskrmedium"
+                            android:text="당근도 가늘게 채썰어주세요."
+                            android:textColor="#CC5F5F5F"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/ExplainImg2"
+                            android:layout_width="119dp"
+                            android:layout_height="117dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/coleslaw2" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#FFF6E0"
+            android:fontFamily="@font/notosanskrbold"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:layout_alignParentBottom="true"
+            android:textColor="#5F5F5F"
+            android:text="홈으로" />
+
+    </RelativeLayout>
+
+</LinearLayout>
