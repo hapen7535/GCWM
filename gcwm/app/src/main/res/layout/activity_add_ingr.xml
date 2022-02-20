@@ -23,54 +23,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-   <FrameLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/blank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/addingrblank" />
 
-       <ImageView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:id="@+id/blank"
-           android:scaleType="fitXY"
-           android:src="@drawable/addingrblank" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-       <ImageView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="20dp"
-           android:id="@+id/ingrs"
-           android:src="@drawable/ingr_resize"/>
+        <ImageView
+            android:id="@+id/ingrs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ingr_resize" />
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="재료를 추가해주세요"
-           android:textColor="#5F5F5F"
-           android:fontFamily="@font/notosanskrbold"
-           android:textSize="20sp"
-           android:gravity="center"
-           android:layout_marginTop="70dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:fontFamily="@font/notosanskrbold"
+                android:gravity="center"
+                android:text="재료를 추가해주세요"
+                android:textColor="#5F5F5F"
+                android:textSize="20sp" />
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="재료는 최대 10개 추가 가능합니다"
-           android:textColor="#BA5F5F5F"
-           android:fontFamily="@font/notosanskrbold"
-           android:textSize="15sp"
-           android:layout_marginTop="100dp"
-           android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:fontFamily="@font/notosanskrbold"
+                android:gravity="center"
+                android:text="재료는 최대 10개 추가 가능합니다"
+                android:textColor="#BA5F5F5F"
+                android:textSize="14sp" />
 
        <LinearLayout
-           android:layout_width="180dp"
+           android:gravity="center"
+           android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:layout_gravity="center"
-           android:layout_marginBottom="180dp">
+           android:layout_gravity="center">
 
            <ImageView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:layout_marginTop="10dp"
                android:src="@drawable/searchmark" />
 
            <AutoCompleteTextView
@@ -85,40 +82,37 @@
 
        </LinearLayout>
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="추가된 재료는 아래에 표시됩니다."
-           android:fontFamily="@font/notosanskrbold"
-           android:textSize="15sp"
-           android:textColor="#455F5F5F"
-           android:gravity="center"
-           android:layout_marginTop="180dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskrbold"
+                android:gravity="center"
+                android:text="추가된 재료는 아래에 표시됩니다."
+                android:textColor="#455F5F5F"
+                android:textSize="15sp" />
 
 
-       <ImageView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:src="@drawable/ingrspace"
-           android:layout_gravity="center"
-           android:layout_marginTop="70dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="338dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ingrspace" />
+
+        </LinearLayout>
 
 
-           <Button
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="300dp"
-               android:layout_gravity="center"
-               android:background="@drawable/searchbutton"
-               android:fontFamily="@font/notosanskrbold"
-               android:gravity="center"
-               android:text="레시피 찾아보기"
-               android:textColor="#5F5F5F"
-               android:textSize="13sp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="75dp"
+            android:background="@drawable/searchbutton"
+            android:fontFamily="@font/notosanskrbold"
+            android:gravity="center"
+            android:text="레시피 찾아보기"
+            android:textColor="#5F5F5F"
+            android:textSize="13sp" />
 
-
-
-   </FrameLayout>
 
     </RelativeLayout>
 
