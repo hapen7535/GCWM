@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/GCWMapp/gcwm/app/src/main/res/drawable/coleslaw_resize.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/GCWMapp/gcwm/app/src/main/res/drawable/cooking_resize.xml" value="0.2265625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/GCWMapp/gcwm/app/src/main/res/drawable/fried_resize.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/GCWMapp/gcwm/app/src/main/res/drawable/ingr_resize.xml" value="0.2375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/GCWMapp/gcwm/app/src/main/res/layout/activity_add_ingr.xml" value="0.23385416666666667" />
         <entry key="..\:/Users/User/AndroidStudioProjects/GCWMapp/gcwm/app/src/main/res/layout/activity_main.xml" value="0.23385416666666667" />
