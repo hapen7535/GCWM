@@ -408,6 +408,7 @@
             android:gravity="center"
             android:textSize="17sp"
             android:layout_alignParentBottom="true"
+            android:id="@+id/backHome"
             android:textColor="#5F5F5F"
             android:text="홈으로" />
 
