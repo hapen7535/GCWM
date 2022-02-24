@@ -8,17 +8,25 @@ import android.widget.Button
 class RecipeResult : AppCompatActivity() {
 
     lateinit var homeBtn : Button
+    lateinit var returnBtn : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_result)
 
         homeBtn = findViewById<Button>(R.id.backHome)
+        returnBtn = findViewById<Button>(R.id.returnBtn)
 
         homeBtn.setOnClickListener{
 
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+
+        }
+
+        returnBtn.setOnClickListener{
+
+            super.onBackPressed()
 
         }
 
