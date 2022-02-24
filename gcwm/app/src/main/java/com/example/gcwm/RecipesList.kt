@@ -18,8 +18,7 @@ class RecipesList : AppCompatActivity() {
 
         returnBtn.setOnClickListener{
 
-            var intent = Intent(this, AddIngr::class.java)
-            startActivity(intent)
+            super.onBackPressed()
 
         }
 
