@@ -30,9 +30,9 @@ class AddIngr : AppCompatActivity() {
             "계란",
         )
 
-        val adapter = ArrayAdapter<String>(
+        val adapter = ArrayAdapter(
             this,
-            R.layout.activity_add_ingr,
+            android.R.layout.simple_dropdown_item_1line, //목록이 출력될 모양 설정
             ingrNames
         )
 
