@@ -40,10 +40,10 @@ class AddIngr : AppCompatActivity() {
 
         searchBar.threshold = 1 //1개 이상의 글자가 겹쳐졌을 때 검색
 
-        /*
-        searchBar.onItemClickListener = AdapterView.OnItemClickListener(
-            //검색창에 원하는 재료가 떠서 클릭했을 때
-        )*/
+        searchBar.setOnItemClickListener{ parent, view, position, id ->
+            val searchToast = Toast.makeText(applicationContext,"${ingrNames[position]}",Toast.LENGTH_SHORT) //검색한 재료의 동적 뷰가 추가되도록 수정 필요
+            searchToast.show()
+        }
 
         searchBtn.setOnClickListener{ //재료 추가를 했을 시에만 작동하도록 예외처리 필요
 
