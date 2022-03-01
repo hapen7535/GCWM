@@ -43,6 +43,10 @@ class AddIngr : AppCompatActivity() {
         searchBar.setOnItemClickListener{ parent, view, position, id ->
             val searchToast = Toast.makeText(applicationContext,"${ingrNames[position]}",Toast.LENGTH_SHORT) //검색한 재료의 동적 뷰가 추가되도록 수정 필요
             searchToast.show()
+
+            //재료 클릭했을 때 동적 레이아웃 추가
+            val ingrInflater = getSystemService(LAYOUT_INFLATER_SERVICE)
+
         }
 
         searchBtn.setOnClickListener{ //재료 추가를 했을 시에만 작동하도록 예외처리 필요
