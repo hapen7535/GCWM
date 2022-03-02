@@ -1,7 +1,9 @@
 package com.example.gcwm
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
@@ -45,7 +47,11 @@ class AddIngr : AppCompatActivity() {
             searchToast.show()
 
             //재료 클릭했을 때 동적 레이아웃 추가
-            val ingrInflater = getSystemService(LAYOUT_INFLATER_SERVICE)
+            val rootaddSpace = findViewById<LinearLayout>(R.id.addSpace) //root LinearLayout
+            val tagView = layoutInflater.inflate(R.layout.tag_layout, rootaddSpace, false) //동적으로 추가할 레이아웃
+            val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
+            tagViewText.setText(ingrNames[position])
+            rootaddSpace.addView(tagView) //태그 추가
 
         }
 
