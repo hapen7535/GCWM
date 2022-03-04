@@ -51,7 +51,16 @@ class AddIngr : AppCompatActivity() {
             val tagView = layoutInflater.inflate(R.layout.tag_layout, rootaddSpace, false) //동적으로 추가할 레이아웃
             val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
             tagViewText.setText(ingrNames[position])
+
+            //태그 패딩 추가
+            val dm = resources.displayMetrics
+            val size = Math.round(20 * dm.density)
+            tagView.setPadding(size,size,size,size)
+
             rootaddSpace.addView(tagView) //태그 추가
+
+
+
 
         }
 
