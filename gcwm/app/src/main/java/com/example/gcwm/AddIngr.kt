@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import java.util.*
+
 
 class AddIngr : AppCompatActivity() {
 
@@ -29,7 +31,7 @@ class AddIngr : AppCompatActivity() {
             "양배추",
             "상추",
             "식빵",
-            "계란",
+            "계란"
         )
 
         val adapter = ArrayAdapter(
@@ -43,7 +45,12 @@ class AddIngr : AppCompatActivity() {
         searchBar.threshold = 1 //1개 이상의 글자가 겹쳐졌을 때 검색
 
         searchBar.setOnItemClickListener{ parent, view, position, id ->
-            val searchToast = Toast.makeText(applicationContext,"${ingrNames[position]}",Toast.LENGTH_SHORT) //검색한 재료의 동적 뷰가 추가되도록 수정 필요
+
+            //실제 position
+            val selected = parent.getItemAtPosition(position)
+            val pos = Arrays.asList(ingrNames).indexOf(selected)
+
+            val searchToast = Toast.makeText(applicationContext,"${ingrNames[pos]}",Toast.LENGTH_SHORT) //검색한 재료의 동적 뷰가 추가되도록 수정 필요
             searchToast.show()
 
             //재료 클릭했을 때 동적 레이아웃 추가
@@ -58,9 +65,6 @@ class AddIngr : AppCompatActivity() {
             tagView.setPadding(size,size,size,size)
 
             rootaddSpace.addView(tagView) //태그 추가
-
-
-
 
         }
 
