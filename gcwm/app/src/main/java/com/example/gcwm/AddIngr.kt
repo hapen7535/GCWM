@@ -48,7 +48,7 @@ class AddIngr : AppCompatActivity() {
 
             //실제 position
             val selected = parent.getItemAtPosition(position)
-            val pos = Arrays.asList(ingrNames).indexOf(selected)
+            var pos = Arrays.asList(ingrNames).indexOf(selected)
 
             val searchToast = Toast.makeText(applicationContext,"${ingrNames[pos]}",Toast.LENGTH_SHORT) //검색한 재료의 동적 뷰가 추가되도록 수정 필요
             searchToast.show()
