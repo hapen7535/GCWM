@@ -47,8 +47,18 @@ class AddIngr : AppCompatActivity() {
         searchBar.setOnItemClickListener{ parent, view, position, id ->
 
             //실제 position
-            val selected = parent.getItemAtPosition(position)
-            var pos = Arrays.asList(ingrNames).indexOf(selected)
+     /*       val selected = parent.getItemAtPosition(position)
+            var pos = Arrays.asList(ingrNames).indexOf(selected)*/
+
+            val selection = parent.getItemAtPosition(position)
+            var pos = -1
+
+            for (i in 0 until ingrNames.size) {
+                if (ingrNames.get(i).equals(selection)) {
+                    pos = i
+                    break
+                }
+            }
 
             val searchToast = Toast.makeText(applicationContext,"${ingrNames[pos]}",Toast.LENGTH_SHORT) //검색한 재료의 동적 뷰가 추가되도록 수정 필요
             searchToast.show()
