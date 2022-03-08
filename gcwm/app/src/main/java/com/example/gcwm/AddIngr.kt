@@ -47,10 +47,7 @@ class AddIngr : AppCompatActivity() {
         searchBar.setOnItemClickListener{ parent, view, position, id ->
 
             //실제 position
-     /*       val selected = parent.getItemAtPosition(position)
-            var pos = Arrays.asList(ingrNames).indexOf(selected)*/
-
-            val selection = parent.getItemAtPosition(position)
+            val selection = parent.getItemAtPosition(position) //autoCompleteTextView 내 선택된 것
             var pos = -1
 
             for (i in 0 until ingrNames.size) {
@@ -64,17 +61,33 @@ class AddIngr : AppCompatActivity() {
             searchToast.show()
 
             //재료 클릭했을 때 동적 레이아웃 추가
-            val rootaddSpace = findViewById<LinearLayout>(R.id.addSpace) //root LinearLayout
+            val rootaddSpace = findViewById<LinearLayout>(R.id.addSpace)
             val tagView = layoutInflater.inflate(R.layout.tag_layout, rootaddSpace, false) //동적으로 추가할 레이아웃
             val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
-            tagViewText.setText(ingrNames[position])
+            tagViewText.setText(ingrNames[pos])
 
             //태그 패딩 추가
             val dm = resources.displayMetrics
             val size = Math.round(20 * dm.density)
             tagView.setPadding(size,size,size,size)
+            val deleteTag = findViewById<Button>(R.id.deleteMark)
+
+            val tagArrayList = ArrayList<String>() //가변 크기의 태그 배열
+
+            tagArrayList.add(tagViewText.text.toString())
+
+            for(i in 0 until tagArrayList.size){
+                var finalI = i
+                deleteTag?.setOnClickListener{
+                    rootaddSpace.removeView(tagView)
+                    tagArrayList.removeAt(finalI)
+                }
+            }
+
 
             rootaddSpace.addView(tagView) //태그 추가
+
+
 
         }
 
