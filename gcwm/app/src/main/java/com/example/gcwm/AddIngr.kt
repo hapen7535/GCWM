@@ -3,10 +3,17 @@ package com.example.gcwm
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
+import android.widget.AdapterView
+
+import android.widget.AdapterView.OnItemClickListener
+
+
+
 
 
 class AddIngr : AppCompatActivity() {
@@ -70,22 +77,26 @@ class AddIngr : AppCompatActivity() {
             val dm = resources.displayMetrics
             val size = Math.round(20 * dm.density)
             tagView.setPadding(size,size,size,size)
+
+            rootaddSpace.addView(tagView) //태그 추가
+
             val deleteTag = findViewById<Button>(R.id.deleteMark)
+
+
 
             val tagArrayList = ArrayList<String>() //가변 크기의 태그 배열
 
             tagArrayList.add(tagViewText.text.toString())
+            Log.d("tag", tagViewText.text.toString())
 
             for(i in 0 until tagArrayList.size){
                 var finalI = i
+                Log.d("finalI", finalI.toString())
                 deleteTag?.setOnClickListener{
                     rootaddSpace.removeView(tagView)
-                    tagArrayList.removeAt(finalI)
                 }
             }
 
-
-            rootaddSpace.addView(tagView) //태그 추가
 
 
 
