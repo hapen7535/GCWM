@@ -82,8 +82,6 @@ class AddIngr : AppCompatActivity() {
 
             val deleteTag = findViewById<Button>(R.id.deleteMark)
 
-
-
             val tagArrayList = ArrayList<String>() //가변 크기의 태그 배열
 
             tagArrayList.add(tagViewText.text.toString())
@@ -94,10 +92,9 @@ class AddIngr : AppCompatActivity() {
                 Log.d("finalI", finalI.toString())
                 deleteTag?.setOnClickListener{
                     rootaddSpace.removeView(tagView)
+                    //tagArrayList.removeAt(finalI)
                 }
             }
-
-
 
 
         }
