@@ -24,10 +24,14 @@ class AddIngr : AppCompatActivity() {
     lateinit var searchBtn : Button
     lateinit var searchBar : AutoCompleteTextView
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_ingr)
+
+        val tagArrayList = ArrayList<String>() //가변 크기의 태그 배열
 
         blank = findViewById<ImageView>(R.id.blank)
         ingrs = findViewById<ImageView>(R.id.ingrs)
@@ -81,8 +85,6 @@ class AddIngr : AppCompatActivity() {
             rootaddSpace.addView(tagView) //태그 추가
 
             val deleteTag = findViewById<Button>(R.id.deleteMark)
-
-            val tagArrayList = ArrayList<String>() //가변 크기의 태그 배열
 
             tagArrayList.add(tagViewText.text.toString())
             Log.d("tag", tagViewText.text.toString())
