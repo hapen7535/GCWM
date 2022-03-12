@@ -51,6 +51,8 @@ class AddIngr : AppCompatActivity() {
             ingrNames
         )
 
+
+
         searchBar.setAdapter(adapter)
 
         searchBar.threshold = 1 //1개 이상의 글자가 겹쳐졌을 때 검색
@@ -83,11 +85,10 @@ class AddIngr : AppCompatActivity() {
             tagView.setPadding(size,size,size,size)
 
             rootaddSpace.addView(tagView) //태그 추가
+            tagArrayList.add(tagViewText.text.toString())
 
             val deleteTag = findViewById<Button>(R.id.deleteMark)
 
-            tagArrayList.add(tagViewText.text.toString())
-            Log.d("tag", tagViewText.text.toString())
 
             for(i in 0 until tagArrayList.size){
                 var finalI = i
