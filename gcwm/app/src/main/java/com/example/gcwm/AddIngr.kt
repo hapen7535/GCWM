@@ -11,9 +11,7 @@ import java.util.*
 import android.widget.AdapterView
 
 import android.widget.AdapterView.OnItemClickListener
-
-
-
+import android.widget.AdapterView.inflate
 
 
 class AddIngr : AppCompatActivity() {
@@ -52,6 +50,10 @@ class AddIngr : AppCompatActivity() {
         )
 
 
+        val rootaddSpace = findViewById<LinearLayout>(R.id.addSpace)
+        val tagView = layoutInflater.inflate(R.layout.tag_layout, rootaddSpace, false)
+        val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
+        val deleteTag = findViewById<Button>(R.id.deleteMark)
 
         searchBar.setAdapter(adapter)
 
@@ -70,13 +72,11 @@ class AddIngr : AppCompatActivity() {
                 }
             }
 
-            val searchToast = Toast.makeText(applicationContext,"${ingrNames[pos]}",Toast.LENGTH_SHORT) //검색한 재료의 동적 뷰가 추가되도록 수정 필요
+            tagArrayList.add(ingrNames[pos]) //태그 array에 추가
+
+            val searchToast = Toast.makeText(applicationContext,"${tagArrayList.size}",Toast.LENGTH_SHORT) //검색한 재료의 동적 뷰가 추가되도록 수정 필요
             searchToast.show()
 
-            //재료 클릭했을 때 동적 레이아웃 추가
-            val rootaddSpace = findViewById<LinearLayout>(R.id.addSpace)
-            val tagView = layoutInflater.inflate(R.layout.tag_layout, rootaddSpace, false) //동적으로 추가할 레이아웃
-            val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
             tagViewText.setText(ingrNames[pos])
 
             //태그 패딩 추가
@@ -85,22 +85,11 @@ class AddIngr : AppCompatActivity() {
             tagView.setPadding(size,size,size,size)
 
             rootaddSpace.addView(tagView) //태그 추가
-            tagArrayList.add(tagViewText.text.toString())
-
-            val deleteTag = findViewById<Button>(R.id.deleteMark)
-
-
-            for(i in 0 until tagArrayList.size){
-                var finalI = i
-                Log.d("finalI", finalI.toString())
-                deleteTag?.setOnClickListener{
-                    rootaddSpace.removeView(tagView)
-                    //tagArrayList.removeAt(finalI)
-                }
-            }
 
 
         }
+
+
 
         searchBtn.setOnClickListener{ //재료 추가를 했을 시에만 작동하도록 예외처리 필요
 
