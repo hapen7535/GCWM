@@ -43,4 +43,7 @@ dependencies {
 
     //circleImageView gradle 추가
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //recyclerview 추가
+    implementation "androidx.recyclerview:recyclerview:1.1.0"       //androidx 버전
 }
