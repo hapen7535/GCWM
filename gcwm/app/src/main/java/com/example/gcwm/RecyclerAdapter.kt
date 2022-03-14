@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter(private val dataSet: Array<String>) :
+abstract class RecyclerAdapter(private val dataSet: Array<String>) :
     RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
 
         class ViewHolder(view: View): RecyclerView.ViewHolder(view){
