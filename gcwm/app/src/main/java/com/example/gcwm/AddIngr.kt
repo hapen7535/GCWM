@@ -49,10 +49,8 @@ class AddIngr : AppCompatActivity() {
             ingrNames
         )
 
-
         val rootaddSpace = findViewById<LinearLayout>(R.id.addSpace)
-        val tagView = layoutInflater.inflate(R.layout.tag_layout, rootaddSpace, false)
-        val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
+
         val deleteTag = findViewById<Button>(R.id.deleteMark)
 
         searchBar.setAdapter(adapter)
@@ -73,6 +71,9 @@ class AddIngr : AppCompatActivity() {
             }
 
             tagArrayList.add(ingrNames[pos]) //태그 array에 추가
+
+            val tagView = layoutInflater.inflate(R.layout.tag_layout, null, false)
+            val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
 
             val searchToast = Toast.makeText(applicationContext,"${tagArrayList.size}",Toast.LENGTH_SHORT) //검색한 재료의 동적 뷰가 추가되도록 수정 필요
             searchToast.show()
