@@ -80,10 +80,13 @@ class AddIngr : AppCompatActivity() {
 
             tagViewText.setText(ingrNames[pos])
 
+            /*
             //태그 패딩 추가
             val dm = resources.displayMetrics
             val size = Math.round(20 * dm.density)
             tagView.setPadding(size,size,size,size)
+
+            */
 
             rootaddSpace.addView(tagView) //태그 추가
 
