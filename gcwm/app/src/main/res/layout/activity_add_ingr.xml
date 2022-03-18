@@ -99,12 +99,9 @@
                 android:id="@+id/addSpace"
                 android:layout_gravity="center"
                 android:background="@drawable/ingrspace"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-            <!--    <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycleTag"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" /> -->
+
 
             </LinearLayout>
 
