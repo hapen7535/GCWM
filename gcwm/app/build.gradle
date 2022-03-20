@@ -46,4 +46,7 @@ dependencies {
 
     //recyclerview 추가
     implementation "androidx.recyclerview:recyclerview:1.1.0"       //androidx 버전
+
+    //FlowLayout 추가
+    implementation 'com.nex3z:flow-layout:1.3.3'
 }

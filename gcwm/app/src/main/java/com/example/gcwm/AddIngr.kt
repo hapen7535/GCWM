@@ -12,6 +12,7 @@ import android.widget.AdapterView
 
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.AdapterView.inflate
+import com.nex3z.flowlayout.FlowLayout
 
 
 class AddIngr : AppCompatActivity() {
@@ -49,9 +50,9 @@ class AddIngr : AppCompatActivity() {
             ingrNames
         )
 
-        val rootaddSpace = findViewById<LinearLayout>(R.id.addSpace)
-
+        val rootaddSpace = findViewById<FlowLayout>(R.id.addSpace)
         val deleteTag = findViewById<Button>(R.id.deleteMark)
+        val parentWidth = rootaddSpace.width //부모 View의 가로 길이를 구한다 (View 개행을 돕기 위함)
 
         searchBar.setAdapter(adapter)
 
