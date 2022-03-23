@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
@@ -12,7 +13,9 @@ import android.widget.AdapterView
 
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.AdapterView.inflate
+import androidx.core.view.LayoutInflaterCompat
 import com.nex3z.flowlayout.FlowLayout
+import kotlin.collections.ArrayList
 
 
 class AddIngr : AppCompatActivity() {
@@ -30,7 +33,10 @@ class AddIngr : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_ingr)
 
-        val tagArrayList = ArrayList<String>() //가변 크기의 태그 배열
+        var deleteTagArray = ArrayList<Button>() //태그의 삭제 버튼 배열
+        var i = 0 //삭제 버튼 배열 구분하기 위한 변수
+        var tagView = ArrayList<View>()
+        var tagViewText = ArrayList<TextView>()
 
         blank = findViewById<ImageView>(R.id.blank)
         ingrs = findViewById<ImageView>(R.id.ingrs)
@@ -51,8 +57,9 @@ class AddIngr : AppCompatActivity() {
         )
 
         val rootaddSpace = findViewById<FlowLayout>(R.id.addSpace)
-        val deleteTag = findViewById<Button>(R.id.deleteMark)
         val parentWidth = rootaddSpace.width //부모 View의 가로 길이를 구한다 (View 개행을 돕기 위함)
+        val tagArray = ArrayList<String>() //태그 삭제를 위한 배열
+
 
         searchBar.setAdapter(adapter)
 
@@ -71,19 +78,34 @@ class AddIngr : AppCompatActivity() {
                 }
             }
 
-            tagArrayList.add(ingrNames[pos]) //태그 array에 추가
 
-            val tagView = layoutInflater.inflate(R.layout.tag_layout, null, false)
-            val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
-
-            val searchToast = Toast.makeText(applicationContext,"${tagArrayList.size}",Toast.LENGTH_SHORT) //검색한 재료의 동적 뷰가 추가되도록 수정 필요
-            searchToast.show()
-
-            tagViewText.setText(ingrNames[pos])
+            tagView.add(layoutInflater.inflate(R.layout.tag_layout, null, false))
+            tagViewText.add(tagView[i].findViewById<TextView>(R.id.tagText)) //동적 레이아웃의 텍스트 재료명이 들어감
 
 
-            rootaddSpace.addView(tagView) //태그 추가
+            deleteTagArray.add(findViewById<Button>(R.id.deleteMark)) //각 태그의 삭제 버튼
+            tagViewText[i]!!.setText(ingrNames[pos])
 
+
+            rootaddSpace.addView(tagView[i]) //태그 추가
+            tagArray.add(ingrNames[pos].toString())
+
+            i++
+
+        }
+
+        for( i in 0 until deleteTagArray.size){
+
+            deleteTagArray[i].setOnClickListener{
+
+
+                    val searchToast = Toast.makeText(applicationContext,"click",Toast.LENGTH_SHORT)
+                    searchToast.show()
+                    rootaddSpace.removeView(tagView[i])
+
+
+
+            }
 
         }
 
