@@ -33,10 +33,7 @@ class AddIngr : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_ingr)
 
-        var deleteTagArray = ArrayList<Button>() //태그의 삭제 버튼 배열
         var i = 0 //삭제 버튼 배열 구분하기 위한 변수
-        var tagView = ArrayList<View>()
-        var tagViewText = ArrayList<TextView>()
 
         blank = findViewById<ImageView>(R.id.blank)
         ingrs = findViewById<ImageView>(R.id.ingrs)
@@ -57,7 +54,6 @@ class AddIngr : AppCompatActivity() {
         )
 
         val rootaddSpace = findViewById<FlowLayout>(R.id.addSpace)
-        val parentWidth = rootaddSpace.width //부모 View의 가로 길이를 구한다 (View 개행을 돕기 위함)
         val tagArray = ArrayList<String>() //태그 삭제를 위한 배열
 
 
@@ -79,21 +75,29 @@ class AddIngr : AppCompatActivity() {
             }
 
 
-            tagView.add(layoutInflater.inflate(R.layout.tag_layout, null, false))
-            tagViewText.add(tagView[i].findViewById<TextView>(R.id.tagText)) //동적 레이아웃의 텍스트 재료명이 들어감
+            val tagView = layoutInflater.inflate(R.layout.tag_layout, null, false)
+            val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
+            //val deleteTag = tagView.findViewWithTag<Button>(R.id.deleteMark)
+
+            tagViewText!!.setText(ingrNames[pos])
 
 
-            deleteTagArray.add(findViewById<Button>(R.id.deleteMark)) //각 태그의 삭제 버튼
-            tagViewText[i]!!.setText(ingrNames[pos])
-
-
-            rootaddSpace.addView(tagView[i]) //태그 추가
+            rootaddSpace.addView(tagView) //태그 추가
             tagArray.add(ingrNames[pos].toString())
 
-            i++
+
+            tagView?.setOnClickListener{
+
+                tagArray.remove(ingrNames[pos])
+                rootaddSpace.removeView(tagView)
+                //intent로 재료 보낼때 보내는 배열에서도 삭제 필요
+
+            }
+
 
         }
 
+        /*
         for( i in 0 until deleteTagArray.size){
 
             deleteTagArray[i].setOnClickListener{
@@ -108,6 +112,8 @@ class AddIngr : AppCompatActivity() {
             }
 
         }
+
+         */
 
 
 
