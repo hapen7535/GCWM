@@ -77,10 +77,9 @@ class AddIngr : AppCompatActivity() {
 
             val tagView = layoutInflater.inflate(R.layout.tag_layout, null, false)
             val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
-            //val deleteTag = tagView.findViewWithTag<Button>(R.id.deleteMark)
+            val deleteTag = tagView.findViewWithTag<Button>(R.id.deleteMark)
 
-            tagViewText!!.setText(ingrNames[pos])
-
+            tagViewText!!.setText(ingrNames[pos]) //tagViewText가 null이 아님을 알림
 
             rootaddSpace.addView(tagView) //태그 추가
             tagArray.add(ingrNames[pos].toString())
@@ -95,25 +94,9 @@ class AddIngr : AppCompatActivity() {
             }
 
 
-        }
-
-        /*
-        for( i in 0 until deleteTagArray.size){
-
-            deleteTagArray[i].setOnClickListener{
-
-
-                    val searchToast = Toast.makeText(applicationContext,"click",Toast.LENGTH_SHORT)
-                    searchToast.show()
-                    rootaddSpace.removeView(tagView[i])
-
-
-
-            }
 
         }
 
-         */
 
 
 

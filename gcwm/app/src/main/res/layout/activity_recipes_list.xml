@@ -14,6 +14,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/returnBtn"
             android:layout_width="26dp"
             android:layout_height="28dp"
             android:layout_row="0"
@@ -22,8 +23,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
-            android:id="@+id/returnBtn"
-            android:background="@drawable/returnbtn" />
+            android:background="@drawable/returnbtn"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,21 +39,17 @@
 
     </FrameLayout>
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        
+        android:layout_height="wrap_content"
+        android:background="@drawable/recipelist">
+
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            android:src="@drawable/recipelist"/>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:src="@drawable/fried_resize"/>
 
         <TextView
@@ -63,7 +60,7 @@
             android:fontFamily="@font/notosanskrbold"
             android:textSize="20sp"
             android:gravity="center"
-            android:layout_marginTop="70dp"/>
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -72,15 +69,28 @@
             android:textColor="#BA5F5F5F"
             android:fontFamily="@font/notosanskrbold"
             android:textSize="15sp"
-            android:layout_marginTop="100dp"
             android:gravity="center"/>
 
+
         <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           >
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/resultSpace"
+            android:orientation="vertical">
+
+
+
+        </LinearLayout>
 
         </ScrollView>
 
-    </FrameLayout>
+    </LinearLayout>
+
+
 
 </LinearLayout>
