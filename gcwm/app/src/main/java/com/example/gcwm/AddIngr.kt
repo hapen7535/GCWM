@@ -61,7 +61,7 @@ class AddIngr : AppCompatActivity() {
 
         searchBar.threshold = 1 //1개 이상의 글자가 겹쳐졌을 때 검색
 
-        searchBar.setOnItemClickListener{ parent, view, position, id ->
+        searchBar.setOnItemClickListener{ parent, view, position, id -> //내부 코드는 함수형으로 바꿀 것
 
             //실제 position
             val selection = parent.getItemAtPosition(position) //autoCompleteTextView 내 선택된 것
@@ -77,13 +77,12 @@ class AddIngr : AppCompatActivity() {
 
             val tagView = layoutInflater.inflate(R.layout.tag_layout, null, false)
             val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
-            val deleteTag = tagView.findViewWithTag<Button>(R.id.deleteMark)
+            //val deleteTag = tagView.findViewWithTag<Button>(R.id.deleteMark)
 
             tagViewText!!.setText(ingrNames[pos]) //tagViewText가 null이 아님을 알림
 
             rootaddSpace.addView(tagView) //태그 추가
             tagArray.add(ingrNames[pos].toString())
-
 
             tagView?.setOnClickListener{
 
@@ -99,10 +98,12 @@ class AddIngr : AppCompatActivity() {
 
 
 
-
         searchBtn.setOnClickListener{ //재료 추가를 했을 시에만 작동하도록 예외처리 필요
 
             var intent = Intent(this, RecipesList::class.java)
+            if(!tagArray.isEmpty()){
+                intent.putExtra("ingr", tagArray)
+            }
             startActivity(intent)
 
         }
