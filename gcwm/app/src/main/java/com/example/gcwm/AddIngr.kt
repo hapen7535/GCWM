@@ -1,5 +1,7 @@
 package com.example.gcwm
 
+import android.app.AlertDialog
+import android.app.PendingIntent.getActivity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -75,6 +77,7 @@ class AddIngr : AppCompatActivity() {
             }
 
 
+
             val tagView = layoutInflater.inflate(R.layout.tag_layout, null, false)
             val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
             //val deleteTag = tagView.findViewWithTag<Button>(R.id.deleteMark)
@@ -100,7 +103,7 @@ class AddIngr : AppCompatActivity() {
 
         searchBtn.setOnClickListener{ //재료 추가를 했을 시에만 작동하도록 예외처리 필요
 
-            var intent = Intent(this, RecipesList::class.java)
+            var intent = Intent(this, MainActivity2::class.java)
             if(!tagArray.isEmpty()){
                 intent.putExtra("ingr", tagArray)
             }
@@ -110,4 +113,5 @@ class AddIngr : AppCompatActivity() {
 
 
     }
+
 }
