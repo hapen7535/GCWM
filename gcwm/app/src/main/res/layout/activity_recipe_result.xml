@@ -18,14 +18,15 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/returnBtn"
             android:layout_width="26dp"
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
-            android:id="@+id/returnBtn"
-            android:background="@drawable/returnbtn" />
+            android:background="@drawable/returnbtn"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -274,7 +275,8 @@
                                 android:fontFamily="@font/notosanskrmedium"
                                 android:text=" "
                                 android:textColor="#CC5F5F5F"
-                                android:textSize="19sp" />
+                                android:textSize="19sp"
+                                tools:ignore="SpeakableTextPresentCheck" />
 
 
                         </LinearLayout>

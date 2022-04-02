@@ -39,6 +39,10 @@ class MainActivity2 : AppCompatActivity() {
 
             container.addView(tagView) //레시피 추가
 
+        tagView.setOnClickListener{
+            val intent = Intent(this, RecipeResult::class.java)
+            startActivity(intent)
+        }
 
         returnBtn.setOnClickListener{
 
