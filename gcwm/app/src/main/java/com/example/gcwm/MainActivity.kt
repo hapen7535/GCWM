@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var MainText : TextView
 
-
     override fun onTouchEvent(event: MotionEvent?): Boolean {
 
         val intent = Intent(this, AddIngr::class.java)
@@ -29,21 +28,11 @@ class MainActivity : AppCompatActivity() {
         anim.repeatCount = Animation.INFINITE
 
         when(event?.actionMasked){
-            MotionEvent.ACTION_DOWN -> {
-                MainText.startAnimation(anim)
-                startActivity(intent)
-            }
-            MotionEvent.ACTION_MOVE -> {
-                MainText.startAnimation(anim)
-                startActivity(intent)
-            }
-            MotionEvent.ACTION_UP -> {
+            MotionEvent.ACTION_DOWN, MotionEvent.ACTION_MOVE, MotionEvent.ACTION_UP -> {
                 MainText.startAnimation(anim)
                 startActivity(intent)
             }
         }
-
-
 
 
         return super.onTouchEvent(event)
