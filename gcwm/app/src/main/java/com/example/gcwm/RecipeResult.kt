@@ -1,19 +1,17 @@
 package com.example.gcwm
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import com.example.gcwm.databinding.ActivityRecipeResultBinding
+import java.util.zip.Inflater
+
 
 class RecipeResult : AppCompatActivity() {
 
+    lateinit var binding : ActivityRecipeResultBinding
     lateinit var homeBtn : Button
     lateinit var returnBtn : Button
 
@@ -21,18 +19,16 @@ class RecipeResult : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_result)
 
-        homeBtn = findViewById<Button>(R.id.backHome)
-        returnBtn = findViewById<Button>(R.id.returnBtn)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_recipe_result)
 
-
-        homeBtn.setOnClickListener{
+        binding.backHome.setOnClickListener{
 
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 
         }
 
-        returnBtn.setOnClickListener{
+        binding.returnBtn.setOnClickListener{
 
             super.onBackPressed()
 

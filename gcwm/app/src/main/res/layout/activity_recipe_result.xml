@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -12,34 +15,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    <FrameLayout
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/returnBtn"
-            android:layout_width="26dp"
-            android:layout_height="28dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginLeft="5dp"
+        <FrameLayout
             android:layout_marginTop="5dp"
-            android:background="@drawable/returnbtn"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="GCWM"
-            android:textColor="#424242"
-            android:fontFamily="@font/gugi"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="30sp"/>
+            <Button
+                android:id="@+id/returnBtn"
+                android:layout_width="26dp"
+                android:layout_height="28dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/returnbtn"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-    </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="GCWM"
+                android:textColor="#424242"
+                android:fontFamily="@font/gugi"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30sp"/>
+
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -418,3 +421,5 @@
     </RelativeLayout>
 
 </LinearLayout>
+
+</layout>
