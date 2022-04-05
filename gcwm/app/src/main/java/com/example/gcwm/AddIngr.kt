@@ -29,7 +29,6 @@ class AddIngr : AppCompatActivity() {
     lateinit var searchBar : AutoCompleteTextView
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -103,9 +102,9 @@ class AddIngr : AppCompatActivity() {
 
         searchBtn.setOnClickListener{ //재료 추가를 했을 시에만 작동하도록 예외처리 필요
 
-            var intent = Intent(this, MainActivity2::class.java)
+            var intent = Intent(this, RecipesList::class.java)
             if(!tagArray.isEmpty()){
-                intent.putExtra("ingr", tagArray)
+                intent.putExtra("ingr", tagArray) //재료명이 담긴 배열을 다음 액티비티에 전송
             }
             startActivity(intent)
 
