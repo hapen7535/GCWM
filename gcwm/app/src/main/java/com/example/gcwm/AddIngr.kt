@@ -24,23 +24,11 @@ import kotlin.collections.ArrayList
 class AddIngr : AppCompatActivity() {
 
     lateinit var binding : ActivityAddIngrBinding
-    lateinit var blank : ImageView
-    lateinit var ingrs : ImageView
-    lateinit var searchBtn : Button
-    lateinit var searchBar : AutoCompleteTextView
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_ingr)
-
-        var i = 0 //삭제 버튼 배열 구분하기 위한 변수
-
-       // blank = findViewById<ImageView>(R.id.blank)
-        //ingrs = findViewById<ImageView>(R.id.ingrs)
-        //searchBtn = findViewById<Button>(R.id.searchBtn)
-        //searchBar = findViewById<AutoCompleteTextView>(R.id.searchIngr)
 
         val ingrNames = arrayOf( //테스트용으로 적어놓음 나중에 DB에서 불러와야함
             "양배추",
@@ -55,7 +43,6 @@ class AddIngr : AppCompatActivity() {
             ingrNames
         )
 
-       // val rootaddSpace = findViewById<FlowLayout>(R.id.addSpace)
         val tagArray = ArrayList<String>() //태그 삭제를 위한 배열
 
 
@@ -90,7 +77,6 @@ class AddIngr : AppCompatActivity() {
 
                 tagArray.remove(ingrNames[pos])
                 binding.addSpace.removeView(tagView)
-                //intent로 재료 보낼때 보내는 배열에서도 삭제 필요
 
             }
 
