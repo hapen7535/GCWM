@@ -29,7 +29,6 @@ class RecipesList : AppCompatActivity() {
 
         val tagView = layoutInflater.inflate(R.layout.recipe_layout, null, false) //각 레시피 레이아웃
         val tagViewText = tagView.findViewById<TextView>(R.id.tagText) //동적 레이아웃의 텍스트 재료명이 들어감
-        //val title = findViewById<TextView>(R.id.listTitle)
 
         tagViewText!!.setText("코울슬로") //tagViewText가 null이 아님을 알림
 
